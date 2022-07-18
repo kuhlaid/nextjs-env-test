@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{' '} nonPublicVar:{process.env.NON_PUBLIC_TESTEV} and nonPublicVar:{process.env.NEXT_PUBLIC_ANALYTICS_ID}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
