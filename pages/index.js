@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({strNPT}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,8 +17,9 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '} nonPublicVar:{process.env.NON_PUBLIC_TESTEV} and nonPublicVar:{process.env.NEXT_PUBLIC_ANALYTICS_ID}
-          <code className={styles.code}>pages/index.js</code>
+          <code className={styles.code}>Private var direct:{process.env.NON_PUBLIC_TESTEV}</code>
+          <code className={styles.code}>Public var direct:{process.env.NEXT_PUBLIC_ANALYTICS_ID}</code>
+          <code className={styles.code}>Private var from server:{strNPT}</code>
         </p>
 
         <div className={styles.grid}>
@@ -66,4 +67,11 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  const strNPT = process.env.NON_PUBLIC_TESTEV
+  return {
+    props: { strNPT }
+  }
 }
