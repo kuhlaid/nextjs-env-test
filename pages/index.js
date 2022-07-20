@@ -89,13 +89,13 @@ export default function Home({strTESTEV}) {
       </Head>
 
       <AuthenticatedTemplate>
-        <p>This will only render if a user is signed-in. v0.6 {strTESTEV} :: {adTenantId}</p>
+        <p>This will only render if a user is signed-in. v0.6.1 {strTESTEV} :: {adTenantId}</p>
         <WelcomeUser />
         <ProfileContent />
         <SignOutButton />
       </AuthenticatedTemplate>
       <UnauthenticatedTemplate>
-        <p>This will only render if a user is not signed-in. {strTESTEV} :: {adTenantId}</p>
+        <p>This will only render if a user is not signed-in. v0.6.1 {strTESTEV} :: {adTenantId}</p>
         <code>Public var direct:{process.env.NEXT_PUBLIC_ANALYTICS_ID}</code>
         <SignInButton />
       </UnauthenticatedTemplate>
